@@ -1,0 +1,187 @@
+Que es react
+Primero y mas importante react es una Biblioteca no un framework la diferencia es el nivel de propagacion en el desarrollo
+un framework es un ecosistema por lo tal es mas estructurado y complejo mientras que la libreria es especifico.
+En este caso react es una biblioteca de JavaScript para costruir interfaces de usuario, Hacer aplicaciones web y SPA
+que es Single Page Application.
+
+En React Trabajamos por componentes esto es separar por partes los proyectos osea tener partesitas de un todo
+como en una app tener la navbar por un lado, botones por otro, listas o textos en otro elemento y alfinar apilarlo todo.
+
+Primer programa Esto se tarda un poquito
+1 dirigirnos a la carpeta enseñar lo de copia
+2 abrir en consola mostar lo de la ruta y el cd
+3 npx create-react-app my-app
+4 cd my-app
+5 code .
+6 npm start
+
+Happy hacking!
+
+Abrimos code y una nueva terminal pero ojo que no sea powershell sino cmd
+y ejecutamos nuestra primer app.
+Hablar sobre el servidor que genera y ejemplificar que se ve en su lan y que prueben desde su cel
+tambien ver los cambios en tiempo real activando el auto save en visual code
+
+Tocamos el tema de las Extensiones que requerimos
+Extensiones VSC
+ES7 React/Redux/React-Native/JS snippets
+Firebase Snippets
+generate-react-component
+React/Redux/react-router Snippets
+Reactjs code snippets
+Simple React Snippets
+vscode-icons
+
+y damos un poco de intro sobre la estructura del sistema de archivos
+Tenemos una carpeta llamada node_modules que es el conjunto de sublibrerias que podemos agregar en react aqui se va
+a agregar por ejemplo firebase
+Tenemos la carpeta public recordamos que en react hacemos aplicaciones Sigle page Application entonces ahi vamos a encontrar
+un index que esta hecho en html y que nos da todas las facultades del mismo por ejemplo ahi vamos a incorporar Bootstrap.
+Tenemos la carpeta scr source que es donde nosotros vajo el esquema de componentes trabajaremos y aqui el elempto mas
+importante que tenemos es el App.js y el index.js lo demas lo podemos eliminar si acaso pero hasta eso no tan importane
+el index.css esto sirve si no ocupamos bootstrap solo en este caso.
+
+Editemos un poquito el codigo Limpieza
+Primero solo nos quedamos con 3 archivos
+App.js
+index.css
+index.js
+
+La app se va a trozar
+Luego editamos App.js
+
+import react from "react"; //No necesaria pero es de buenas practicas.
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Primer App - Fundamentos React</h1>
+    </div>
+  );
+}
+
+export default App;
+
+despues el index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+y listo ya jala
+
+Ahora Vamos a crear nuestro primer componente
+para ello usaremos "rafce" y nos creara toda la estructura
+menseionar que los archivos se crean en minusculas y los compoentes la primera en mayuscula
+
+import React from 'react'
+
+export const Parrafo = () => {
+    return (
+        <div>
+            <p>Hola mundo React</p>
+        </div>
+    )
+}
+
+export default Parrafo;
+
+Ahora incorporemos al App de esta manera primero <Parrafo/> y checar que se importe
+import react from "react";
+import Parrafo from "./componentes/parrafo";
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Primer App - Fundamentos React</h1>
+      <Parrafo/>
+    </div>
+  );
+}
+
+export default App;
+
+por ultimo mostramos como se apilan poniendo repetidamente
+function App() {
+  return (
+    <div className="App">
+      <h1>Primer App - Fundamentos React</h1>
+      <Parrafo/>
+      <Parrafo/>
+      <Parrafo/>
+      <Parrafo/>
+    </div>
+  );
+}
+
+Siguiente practica trabajar con variables y mensionar que en react no existen las variables sino las constantes
+ejemplo 1
+import React from 'react'
+
+function Variables() {
+    const saludo = "Hola desde Constante";
+    return (
+        <div>
+            <h2>Nuevo Componente. {saludo}</h2>
+        </div>
+    )
+}
+
+export default Variables
+
+Lo importamos al proyecto como lo anterior y provamos
+les hacemos ejemplo de cambiar los valores y les decimos se puede como desarrollador pero no en la ejecucion para ello
+mas adelante hablaremos del useState que es un hook de react
+
+Ejemplo2
+import React from 'react'
+
+function Variables() {
+    const saludo = "Hola desde Constante saludo";
+    const imgen = "https://sigdeletras.com/images/blog/202004_react_leaflet/react.png";
+    return (
+        <div>
+            <h2>Nuevo Componente. {saludo}</h2>
+            <img src={imgen} alt=""/>
+        </div>
+    )
+}
+
+export default Variables
+
+Evento click
+Ejemplo vamos a ver como trabaja el evento click y el llamado como funcion de flecha de valga una funcion
+codigo
+import React from 'react'
+
+function Eventos() {
+    const eventoClick = () => {
+        console.log("Me diste un click")
+    }
+
+    return (
+        <div>
+            <h2>Eventos</h2>
+            <button onClick={() => eventoClick() }>Da un click</button>
+        </div>
+    )
+}
+
+    export default Eventos
+
+Importamos a la funcion App y mostramos como se usa la inspeccion de consola
+
+
+
+
+
+
+
+
